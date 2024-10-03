@@ -1,0 +1,54 @@
+﻿@model VsunPharmaWebsite.Models.ProductModel
+@{
+    ViewData["Title"] = "Product Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section-padding mt-5">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-9">
+                <div class="cart_product">
+                    <div class="cart_product_heading">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6 text-lg-left">
+                                <h4>
+                                    Shopping Cart
+                                    <span>( 3 Item )</span>
+                                </h4>
+                            </div>
+                            <div class="col-sm-6 text-lg-right">
+                                <a href="#" class="btn btn-light btn-medium button-sm d-none d-md-inline-block">
+                                    <i class="ti-trash"></i> Empty
+                                    Cart
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 mt-lg-0 mt-6">
+                <h6 class="font-weight-bold">Deliver to</h6>
+                <div class="mb-4">
+                    <select class="form-control">
+                        <option value="s">Siliguri - 734001</option>
+                        <option value="s" selected>Delhi - 110002</option>
+                        <option value="s">Kolkata - 700027</option>
+                    </select>
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-summary-wrap">
+                        <h4>Cart Summary</h4>
+                        <p>Sub Total <span>$00.00</span></p>
+                        <p>Shipping Cost <span>$00.00</span></p>
+                        <h2>Grand Total <span>$00.00</span></h2>
+                    </div>
+                    <div class="cart-summary-button">
+                        <a href="/Home/Products" class="btn btn-primary btn-rounded btn-full btn-large">Proceed to Checkout <i class="ti-arrow-right"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

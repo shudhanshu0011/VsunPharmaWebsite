@@ -27,6 +27,25 @@ namespace VsunPharmaWebsite.Controllers
 			return View();
 		}
 
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+        [HttpGet("/Home/Product/{id}")]
+        public IActionResult Product(string id)
+        {
+            var data = _homeRepository.GetAllProducts();
+            foreach (var product in data)
+            {
+                if(product.ProductId.ToString() == id)
+                {
+                    return View(product);
+                }
+            }
+            return RedirectToAction("Products", "Home");
+        }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

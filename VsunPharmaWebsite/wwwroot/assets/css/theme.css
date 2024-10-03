@@ -25294,7 +25294,6 @@ html:not([dir="rtl"]) .range-slider-ui.noUi-horizontal .noUi-handle {
         }
 
             .product-details-slider-area .product-details-big-image-slider-wrapper .single-image img {
-                width: auto;
                 border-radius: 6px;
                 max-height: 400px;
                 margin: auto

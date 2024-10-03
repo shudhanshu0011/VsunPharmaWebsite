@@ -16,7 +16,7 @@
                 var productHtml = `
             <div class="col-md-2 col-sm-4 col-6">
                 <div class="product">
-                    <a href="product-single.html?productId=${product.ProductId}" class="product-img">
+                    <a href="/Home/Product/${product.ProductId}" class="product-img">
                         <img src="${product.ProductImage}" class="" alt="${product.ProductName}">
                     </a>
                     <div class="product-info">
@@ -29,7 +29,7 @@
                             <div class="review-count">4.5 (100+)</div>
                         </div>
                         <h3>
-                            <a href="product-single.html?productId=${product.ProductId}">${product.ProductName}</a>
+                            <a href="/Home/Product/${product.ProductId}">${product.ProductName}</a>
                         </h3>
                         <div class="product-value">
                             <div class="d-flex">

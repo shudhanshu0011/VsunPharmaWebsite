@@ -1,0 +1,184 @@
+﻿@model VsunPharmaWebsite.Models.ProductModel
+@{
+    ViewData["Title"] = "Product Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section-padding mt-4">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-lg-4">
+                <!--=======  product details slider area  =======-->
+                <div class="product-details-slider-area">
+                    <div class="big-image-wrapper">
+                        <div class="product-details-big-image-slider-wrapper slider-for" data-autoplay="false"
+                             data-nav="false">
+                            <div class="single-image">
+                                <img src="@Model.ProductImage" alt="slider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--======= End of product details slider area =======-->
+            </div>
+            <div class="col-lg-8 mt-4">
+                <div class="row pl-lg-3">
+                    <div class="col-lg-7">
+                        <div class="single-product-content-description">
+                            <p class="single-info"><a href="category.html">@Model.Brand</a> </p>
+                            <h4 class="product-title">@Model.ProductName</h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span class="review-count ml-3">4.5 (100+)</span>
+                            </div>
+                            <p class="single-grid-product__price">
+                                <span class="discounted-price">@Model.DiscountedPrice</span> <span class="main-price discounted">@Model.RegularPrice</span>
+                            </p>
+
+                            <div class="single-info">
+                                <span class="d-block text-muted mb-2"><strong>SKU :</strong> @Model.SKU</span>
+                                <span class="d-block text-muted mb-2">
+                                    <strong>Category :</strong> @Model.Category
+                                </span>
+
+                                <span class="d-block text-muted mb-2">
+                                    <strong>Availability :</strong> @Model.IsAvailable
+                                </span>
+                            </div>
+
+                            <div class="product-actions my-4 justify-content-between">
+                                <!-- Quantity -->
+                                <div class="qty-input btn">
+                                    <i class="less">-</i>
+                                    <input type="text" value="1" />
+                                    <i class="more">+</i>
+                                </div>
+                                <!-- End Quantity -->
+                                <div class="product-buttons ml-0 ml-md-3 mt-4 mt-md-0 text-md-left text-center">
+                                    <a class="btn btn-rounded btn-soft-primary mr-2" href="/Home/Cart">
+                                        <i class="fa fa-heart"></i> Add To Wishlist
+                                    </a>
+                                    <a class="btn btn-rounded btn-primary" href="/Home/Cart">
+                                        <i class="fa fa-shopping-cart"></i> Add To Cart
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="mb-4">
+                                <a href="/Home/Cart"
+                                   class="btn btn-block btn-primary btn-pill transition-3d-hover">
+                                    Buy
+                                    Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-4 mt-lg-0">
+                        <div class="bg-light p-3">
+                            <h6>Delivery Options</h6>
+                            <div class="media align-items-center">
+                                <span class="mr-2">
+                                    <i class="ti-check text-primary small"></i>
+                                </span>
+                                <div class="media-body text-body small">
+                                    <span class="font-weight-bold mr-1">Free Shipping</span>
+                                </div>
+                            </div>
+                            <div class="media align-items-center">
+                                <span class="mr-2">
+                                    <i class="ti-check text-primary small"></i>
+                                </span>
+                                <div class="media-body text-body small">
+                                    <span class="font-weight-bold mr-1"> Cash on Delivery Available</span>
+                                </div>
+                            </div>
+                            <div class="media align-items-center">
+                                <span class="mr-2">
+                                    <i class="ti-check text-primary small"></i>
+                                </span>
+                                <div class="media-body text-body small">
+                                    <span class="font-weight-bold mr-1"> 14 days Return</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="font-weight-bold text-dark">Products highlights</h6>
+                            <ul class="pl-3">
+                                <li>Comprise of WPC</li>
+                                <li>Helps in Muscle Building</li>
+                                <li>Generally Consumed With Water</li>
+                                <li>Helps to strengthen the immune system </li>
+                                <li>Supports healthy functioning of the cardiovascular system</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="font-weight-bold text-dark">Share on</h6>
+                            <div class="social-links social-links-dark">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-behance"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=======  product description review   =======-->
+    <div class="product-full-description">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="entry-product-section-heading">Description</h3>
+                    <p>
+                        @Model.ProductDescription
+                    </p>
+                    <h3 class="entry-product-section-heading">Additional information</h3>
+                    <div class="product-info-sec">
+                        <table class="table table-bordered table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Number of Servings</td>
+                                    <td>33</td>
+                                </tr>
+                                <tr>
+                                    <td>Serving Size</td>
+                                    <td>30 g</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein per Serving</td>
+                                    <td>12 g</td>
+                                </tr>
+                                <tr>
+                                    <td>Vegetarian/Non-Vegetarian</td>
+                                    <td>Vegetarian</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
