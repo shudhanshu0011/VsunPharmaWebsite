@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 using VsunPharmaWebsite.IRepository;
 using VsunPharmaWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VsunPharmaWebsite.Controllers
 {
@@ -32,6 +33,13 @@ namespace VsunPharmaWebsite.Controllers
             return View();
         }
 
+        [Authorize]
+        public IActionResult ManageProducts()
+        {
+            IEnumerable<ProductModel> data = _homeRepository.GetAllProducts();
+            return View(data);
+        }
+
         [HttpGet("/Home/Product/{id}")]
         public IActionResult Product(string id)
         {
@@ -50,6 +58,21 @@ namespace VsunPharmaWebsite.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult SaveChanges(ProductModel product, string action)
+        {
+            if (action.StartsWith("Edit"))
+            {
+                _homeRepository.SaveChanges(product, "Edit");
+            }
+            else if (action.StartsWith("Delete"))
+            {
+                _homeRepository.SaveChanges(product, "Delete");
+            }
+
+            return Json(new { success = true });
         }
 
         public async Task<IActionResult> GetProductCategory()

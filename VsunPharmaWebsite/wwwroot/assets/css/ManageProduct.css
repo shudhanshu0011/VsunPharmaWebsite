@@ -1,0 +1,190 @@
+﻿input, textarea, .btn-editt, .btn-deletee {
+    height: 25px;
+    margin: 0;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 12pt;
+    outline: none;
+    border-radius: 0;
+    background: none;
+    border: 1px solid #282B33;
+}
+
+.btn-editt, .btn-deletee, select {
+    height: 45px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.btn-editt, .btn-deletee {
+    background: none;
+    border: 1px solid black;
+    margin: 25px 0;
+}
+
+    .btn-editt, .btn-deletee:hover {
+        background-color: #282B33;
+        color: white;
+    }
+
+.btn:hover {
+    color: white;
+}
+
+
+.tools {
+    overflow: auto;
+    zoom: 1;
+}
+
+.search-area {
+    float: left;
+    width: 60%;
+}
+
+.settings {
+    display: none;
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+
+#view {
+    display: none;
+    width: auto;
+    height: 47px;
+}
+
+#searchbutton {
+    width: 60px;
+    height: 47px;
+}
+
+input#search {
+    width: 30%;
+    width: calc(100% - 90px);
+    padding: 10px;
+    border: 1px solid #282B33;
+}
+
+@media screen and (max-width:400px) {
+    .search-area {
+        width: 100%;
+    }
+
+    .edtProdctCard{
+        display: block;
+    }
+
+    .edtProdctCard img {
+        width: 100%;
+    }
+}
+
+.product-grid {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+    table.product-grid, .product-grid tr {
+        /*   border: 1px solid #ccc; */
+    }
+
+    .product-grid th {
+        width: auto;
+        padding: 0 5px 10px;
+        text-align: left;
+        font-size: 13px;
+    }
+
+    .product-grid td {
+        width: auto;
+        padding: 0 2px;
+    }
+
+    .product-grid th:nth-child(1) {
+        text-align: center;
+    }
+
+    .product-grid th:nth-child(4) {
+        width: 10%;
+    }
+
+    .product-grid th:nth-child(5) {
+        width: 7%;
+    }
+
+    .product-grid th:nth-child(6) {
+        width: 6%;
+    }
+
+    .product-grid th:nth-child(7) {
+        width: 6%;
+    }
+
+    .product-grid th:nth-child(8) {
+        width: 10%;
+    }
+
+    .product-grid th:nth-child(9) {
+        width: 10%;
+    }
+
+    .product-grid th:nth-child(10) {
+        width: 120px;
+    }
+
+    .product-grid input {
+        display: block;
+        width: 90%;
+        width: calc(100% - 4px);
+        margin: 0;
+        padding: 0px 0px;
+        border: 0;
+        border-bottom: 1px solid #aaa;
+        font-size: 13px;
+    }
+
+        .product-grid input::-webkit-input-placeholder {
+            color: #cdcdcd;
+        }
+
+        .product-grid input:-moz-placeholder {
+            color: #cdcdcd;
+        }
+
+        .product-grid input::-moz-placeholder {
+            color: #cdcdcd;
+        }
+
+        .product-grid input:-ms-input-placeholder {
+            color: #cdcdcd;
+        }
+
+    .product-grid button {
+        margin: 0;
+    }
+
+    .product-grid .product-img {
+        width: 60px;
+        vertical-align: middle;
+    }
+
+        .product-grid .product-img img {
+            display: block;
+            margin: 3px auto;
+            width: auto;
+            height: 60px;
+            max-width: 60px;
+            background-cover: fit;
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.8);
+            border-radius: 2px;
+        }
+
+
+.edtProdctCard {
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

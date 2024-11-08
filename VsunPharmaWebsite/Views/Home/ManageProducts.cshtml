@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "All Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link href="~/assets/css/manageproduct.css" rel="stylesheet" />
+
+<main>
+    <section class="pt-3 pt-md-3">
+        <div class="container">
+
+            @foreach (var product in Model)
+            {
+                <div class="row mb-3 p-3 edtProdctCard">
+                    <div class="col-12 col-lg-2 mb-3 d-flex align-items-center">
+                        <img class="img-fluid" src="@product.ProductImage" alt="Product Image" />
+                    </div>
+
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col m-1">
+                                <label for="ProductName_@product.ProductId"><small>Product Name</small></label>
+                                <input type="text" id="ProductName_@product.ProductId" name="ProductName_@product.ProductId" value="@product.ProductName" class="form-control" />
+                            </div>
+
+                            <div class="col m-1">
+                                <label for="Brand_@product.ProductId"><small>Brand</small></label>
+                                <input type="text" id="Brand_@product.ProductId" name="Brand_@product.ProductId" value="@product.Brand" class="form-control" />
+                            </div>
+
+                            <div class="col m-1">
+                                <label for="Category_@product.ProductId"><small>Category</small></label>
+                                <input type="text" id="Category_@product.ProductId" name="Category_@product.ProductId" value="@product.Category" class="form-control" />
+                            </div>
+
+                            <div class="w-100"></div>
+
+                            <div class="col m-1">
+                                <label for="RegularPrice_@product.ProductId"><small>Regular Price</small></label>
+                                <input type="text" id="RegularPrice_@product.ProductId" name="RegularPrice_@product.ProductId" value="@product.RegularPrice.ToString("F2")" class="form-control" />
+                            </div>
+
+                            <div class="col m-1">
+                                <label for="DiscountedPrice_@product.ProductId"><small>Discounted Price</small></label>
+                                <input type="text" id="DiscountedPrice_@product.ProductId" name="DiscountedPrice_@product.ProductId" value="@product.DiscountedPrice.ToString("F2")" class="form-control" />
+                            </div>
+
+                            <div class="col m-1">
+                                <label for="Quantity_@product.ProductId"><small>Quantity</small></label>
+                                <input type="number" id="Quantity_@product.ProductId" name="Quantity_@product.ProductId" value="@product.Quantity" class="form-control" />
+                            </div>
+
+                            <div class="w-100"></div>
+
+                            <div class="col m-1">
+                                <label for="SKU_@product.ProductId"><small>SKU</small></label>
+                                <input type="text" id="SKU_@product.ProductId" name="SKU_@product.ProductId" value="@product.SKU" class="form-control" />
+                            </div>
+
+                            <div class="col m-1">
+                                <label for="Description_@product.ProductId"><small>Description</small></label>
+                                <textarea id="Description_@product.ProductId" name="Description_@product.ProductId" class="form-control">@product.ProductDescription</textarea>
+                            </div>
+
+                            <div class="col d-flex justify-content-start gap-2 mt-2">
+                                <button class="btn btn-edit btn-editt" data-id="@product.ProductId" data-action="Edit">Edit</button>
+                                <button class="btn btn-delete btn-deletee" data-id="@product.ProductId" data-action="Delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+           
+
+
+
+
+
+
+
+
+
+
+
+            @* <table class="product-grid">
+                <thead>
+                    <tr>
+                        <th class="product-img">Img</th>
+                        <th>Actions</th>
+                        <th>Title</th>
+                        <th>Brand</th>
+                        <th>Category</th>
+                        <th>Regular Price</th>
+                        <th>Discounted Price</th>
+                        <th>Quantity</th>
+                        <th>SKU</th>
+                        <th>Description</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td class="product-img">
+                                <img src="@product.ProductImage" alt="Product Image" />
+                            </td>
+                            <td>
+                                <button class="btn btn-edit btn-editt" data-id="@product.ProductId" data-action="Edit">Edit</button>
+                                <button class="btn btn-delete btn-deletee" data-id="@product.ProductId" data-action="Delete">Delete</button>
+                            </td>
+                            <td><input type="text" name="ProductName_@product.ProductId" value="@product.ProductName" /></td>
+                            <td><input type="text" name="Brand_@product.ProductId" value="@product.Brand" /></td>
+                            <td><input type="text" name="Category_@product.ProductId" value="@product.Category" /></td>
+                            <td><input type="text" name="RegularPrice_@product.ProductId" value="@product.RegularPrice.ToString("F2")" /></td>
+                            <td><input type="text" name="DiscountedPrice_@product.ProductId" value="@product.DiscountedPrice.ToString("F2")" /></td>
+                            <td><input type="number" name="Quantity_@product.ProductId" value="@product.Quantity" /></td>
+                            <td><input type="text" name="SKU_@product.ProductId" value="@product.SKU" /></td>
+                            <td><textarea name="Description_@product.ProductId">@product.ProductDescription</textarea></td>
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table> *@
+        </div>
+    </section>
+</main>
+
+<script src="~/assets/js/manageproduct.js"></script>

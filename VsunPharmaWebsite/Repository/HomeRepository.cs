@@ -58,5 +58,35 @@ namespace VsunPharmaWebsite.Repository
                 context.Execute("RegisterUser", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+
+        public void SaveChanges(ProductModel product, string action)
+        {
+            using (var context = _dapperContext.CreateConnection())
+            {
+                var parameters = new DynamicParameters();
+
+                if (action == "Edit")
+                {
+                    parameters.Add("ProductId", product.ProductId);
+                    parameters.Add("ProductName", product.ProductName);
+                    parameters.Add("Brand", product.Brand);
+                    parameters.Add("RegularPrice", product.RegularPrice);
+                    parameters.Add("DiscountedPrice", product.DiscountedPrice);
+                    parameters.Add("SKU", product.SKU);
+                    parameters.Add("Category", product.Category);
+                    parameters.Add("IsAvailable", product.IsAvailable);
+                    parameters.Add("ProductDescription", product.ProductDescription);
+                    parameters.Add("Quantity", product.Quantity);
+
+                    context.Execute("UpdateProduct", parameters, commandType: CommandType.StoredProcedure);
+                }
+                else if (action == "Delete")
+                {
+                    parameters.Add("ProductId", product.ProductId);
+
+                    context.Execute("DeleteProduct", parameters, commandType: CommandType.StoredProcedure);
+                }
+            }
+        }
     }
 }

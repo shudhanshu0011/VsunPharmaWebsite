@@ -11,5 +11,7 @@ namespace VsunPharmaWebsite.IRepository
         public UsersModel LoginUser(LoginModel user);
 
         public void RegisterUser(UsersModel user);
+
+        public void SaveChanges(ProductModel product, string action);
     }
 }
